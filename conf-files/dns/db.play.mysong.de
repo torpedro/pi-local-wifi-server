@@ -2,13 +2,14 @@
 ; BIND data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	play.mysong. root.play.mysong. (
+@	IN	SOA	play.mysong.de. root.play.mysong.de. (
 			      2		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	play.mysong.
+@	IN	NS	play.mysong.de.
 @	IN	A	192.168.42.1
 @	IN	AAAA	::1
+*.play.mysong.de.	14400	IN	A	192.168.42.1
