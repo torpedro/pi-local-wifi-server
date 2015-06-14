@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Play My Song</title>
+    <script type="text/javascript" src="/jsondb-client.js"></script>
+    <script type="text/javascript" src="/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+
+    <!-- HTML Content -->
+    <div class="content">
+      <h3>Newest tracks are listed first:</h3>
+      <div id="trackList"></div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+renderedRows = 0;
+db = new JsonDB(':10101');
+
+function updateSongs() {
+  db.select('songs', function(rows) {
+    // Render all rows that are not rendered yet
+    for (;renderedRows < rows.length; ++renderedRows) {
+      renderRow(rows[renderedRows]);
+    }
+  }); 
+};
+function renderRow(row) {
+  console.log(row)
+  $('#trackList').prepend('<div class="song"><span class="time">[' + row.__meta.timestamp + ']</span> <span class="name">' + row.track + '</span></div>');
+};
+
+updateSongs();
+window.setInterval(updateSongs, 5000);
+
+    </script>
+  </body>
+</html>

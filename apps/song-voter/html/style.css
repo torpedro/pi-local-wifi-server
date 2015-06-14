@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('OpenSans.woff2') format('woff2');
+}
+
+html, body {
+	font-family: 'Open Sans', 'Verdana';
+  text-align: center;
+}
+
+input {
+	font-family: 'Open Sans', 'Verdana';
+  width: 90%;
+  font-size: 40px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+input[type="submit"] {
+	max-width: 400px;
+	cursor: pointer;
+}
+
+#trackList {
+	padding-left: 20px;
+}
+
+.content {
+  text-align: left;
+}
+
+.time {
+	color: #888;
+}

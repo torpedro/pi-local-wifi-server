@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Play My Song</title>
+    <script type="text/javascript" src="/jsondb-client.js"></script>
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <!-- HTML Content -->
+    <form id="songSubmitForm">
+      <input type="text" placeholder="What Song do you want to hear?" id="songNameInput" />
+      <input type="submit" value="Play It!" />
+    </form>
+
+    <script type="text/javascript">
+db = new JsonDB(':10101');
+$('#songSubmitForm').submit(function(evt) {
+  var song = $('#songNameInput').val();
+  if (song.length > 0) {
+    db.insert('songs', {'track': $('#songNameInput').val()}, function() {
+      location.href = 'thankyou.html'
+    });
+  }
+  evt.preventDefault()
+});
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"PORT": 10101,
+
+	"AUTH_FILE": "server-auth.json",
+
+	"DATA_PATH": "data/",
+	
+	"HTML_PATH": "html/"
+}

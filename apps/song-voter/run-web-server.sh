@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo python -m SimpleHTTPServer 80
+sudo python SimpleJsonDB/server/runserver.py server-config.json

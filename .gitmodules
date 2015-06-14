@@ -1,0 +1,3 @@
+[submodule "apps/song-voter/SimpleJsonDB"]
+	path = apps/song-voter/SimpleJsonDB
+	url = https://github.com/torpedro/SimpleJsonDB.git
